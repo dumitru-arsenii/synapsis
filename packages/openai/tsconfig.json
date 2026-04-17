@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "..",
+    "paths": {
+      "@synapsis/neuron": ["../neuron/src/index.ts"],
+      "@synapsis/pathway": ["../pathway/src/index.ts"]
+    },
+    "outDir": "dist"
+  },
+  "include": ["src", "test"]
+}
