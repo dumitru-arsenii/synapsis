@@ -1,0 +1,43 @@
+{
+  "name": "@synapsis/pathway",
+  "version": "0.1.0",
+  "description": "Workflow orchestration, queued dispatch, and deterministic action primitives for Synapsis.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dumitru-arsenii/synapsis.git",
+    "directory": "packages/pathway"
+  },
+  "homepage": "https://github.com/dumitru-arsenii/synapsis#readme",
+  "bugs": {
+    "url": "https://github.com/dumitru-arsenii/synapsis/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "dependencies": {
+    "zod": "^3.24.4",
+    "zod-to-json-schema": "^3.25.2"
+  },
+  "scripts": {
+    "build": "tsup --config ../../tsup.config.ts",
+    "clean": "rimraf dist",
+    "dev": "tsup --config ../../tsup.config.ts --watch",
+    "test": "vitest run --root ../.. packages/pathway/test",
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "@synapsis/neuron",
+  "version": "0.1.0",
+  "description": "Prompt primitives for Synapsis.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dumitru-arsenii/synapsis.git",
+    "directory": "packages/neuron"
+  },
+  "homepage": "https://github.com/dumitru-arsenii/synapsis#readme",
+  "bugs": {
+    "url": "https://github.com/dumitru-arsenii/synapsis/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "dependencies": {
+    "zod": "^3.24.4",
+    "zod-to-json-schema": "^3.25.2",
+    "@synapsis/pathway": "workspace:*"
+  },
+  "scripts": {
+    "build": "tsup --config ../../tsup.config.ts",
+    "clean": "rimraf dist",
+    "dev": "tsup --config ../../tsup.config.ts --watch",
+    "test": "vitest run --root ../.. packages/neuron/test",
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "@synapsis/cortex",
+  "version": "0.1.0",
+  "description": "Execution runtime drivers for Synapsis queues, memory, locks, and scheduling.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dumitru-arsenii/synapsis.git",
+    "directory": "packages/cortex"
+  },
+  "homepage": "https://github.com/dumitru-arsenii/synapsis#readme",
+  "bugs": {
+    "url": "https://github.com/dumitru-arsenii/synapsis/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./memory": {
+      "types": "./dist/memory/index.d.ts",
+      "import": "./dist/memory/index.js",
+      "require": "./dist/memory/index.cjs"
+    },
+    "./redis": {
+      "types": "./dist/redis/index.d.ts",
+      "import": "./dist/redis/index.js",
+      "require": "./dist/redis/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist",
+    "dev": "tsup --watch",
+    "test": "vitest run --root ../.. packages/cortex/test",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "redis": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "redis": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/redis": "^4.0.0",
+    "redis": "^5.0.0"
+  }
+}

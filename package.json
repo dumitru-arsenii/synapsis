@@ -1,0 +1,29 @@
+{
+  "name": "@synapsis/workspace",
+  "private": true,
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dumitru-arsenii/synapsis.git"
+  },
+  "homepage": "https://github.com/dumitru-arsenii/synapsis#readme",
+  "bugs": {
+    "url": "https://github.com/dumitru-arsenii/synapsis/issues"
+  },
+  "packageManager": "pnpm@10.8.1",
+  "scripts": {
+    "build": "pnpm -r build",
+    "clean": "pnpm -r clean",
+    "dev": "pnpm -r --parallel dev",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
+  }
+}

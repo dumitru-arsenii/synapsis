@@ -1,0 +1,6 @@
+.pnpm-store
+node_modules
+**/**/dist
+**/**/node_modules
+examples/.env
+.DS_Store

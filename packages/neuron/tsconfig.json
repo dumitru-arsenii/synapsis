@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "..",
+    "paths": {
+      "@synapsis/pathway": ["../pathway/src/index.ts"]
+    },
+    "outDir": "dist"
+  },
+  "include": ["src", "test"]
+}
